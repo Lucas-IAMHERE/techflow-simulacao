@@ -21,3 +21,14 @@ class GerenciadorTarefas:
         self.tarefas.append(tarefa)
         self._next_id += 1
         return tarefa
+    
+
+    def listar_tarefas(self):
+        return self.tarefas
+
+    def excluir_tarefa(self, id_tarefa):
+        for index, tarefa in enumerate(self.tarefas):
+            if tarefa["id"] == id_tarefa:
+                del self.tarefas[index]
+                return True
+        return False
