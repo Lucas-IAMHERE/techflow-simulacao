@@ -32,3 +32,10 @@ class GerenciadorTarefas:
                 del self.tarefas[index]
                 return True
         return False
+    
+    def atualizar_prioridade(self, id_tarefa, nova_prioridade):
+        for tarefa in self.tarefas:
+            if tarefa["id"] == id_tarefa:
+                tarefa["prioridade"] = nova_prioridade.value
+                return True
+        return False
